@@ -6,11 +6,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />
-  },
-  {
-    path: '/copy',
-    element: <HomePage />
-  },
+  }
  
 ])
 

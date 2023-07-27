@@ -4,69 +4,71 @@ import { useAudioRecorder } from 'react-audio-voice-recorder';
 const PROCESS_AUDIO_URL = "/process-audio"
 
 function Mice() {
-    const axiosController = new AbortController();
-    const [recordedAudio, setRecordedAudio] = useState(null);
-    const [audioProcessedResult, setAudioProcessedResult] = useState(null);
-    const [processingAudio, setProcessingAudio] = useState(false);
-    const { startRecording, stopRecording, recordingTime, recordingBlob, isRecording } = useAudioRecorder();
+  const axiosController = new AbortController();
+  const [recordedAudio, setRecordedAudio] = useState(null);
+  const [audioProcessedResult, setAudioProcessedResult] = useState(null);
+  const [processingAudio, setProcessingAudio] = useState(false);
+  const { startRecording, stopRecording, recordingTime, recordingBlob, isRecording } = useAudioRecorder();
 
-    const toggleRecording = () => {
-        if (isRecording) stopRecording();
-        else {
-            setAudioProcessedResult(null);
-            startRecording();
-        }
+  const toggleRecording = () => {
+    if (isRecording) stopRecording();
+    else {
+      setAudioProcessedResult(null);
+      startRecording();
     }
+  }
 
-    React.useEffect(() => {
-        if (!recordingBlob || recordingBlob === null || audioProcessedResult !== null) return;
-        setRecordedAudio(recordingBlob)
-    }, [recordingBlob])
-
-
-    function formatTime(seconds:  number) {
-        var minutes = Math.floor(seconds / 60);
-        var seconds = seconds % 60;
-        return (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-    }
+  React.useEffect(() => {
+    if (!recordingBlob || recordingBlob === null || audioProcessedResult !== null) return;
+    setRecordedAudio(recordingBlob)
+  }, [recordingBlob])
 
 
-    const startProcessingAudio = () => {
-        if (!recordedAudio || recordedAudio === null) return;
-        setProcessingAudio(true);
-        setAudioProcessedResult(null);
-        const data = new FormData();
-        data.append("file", recordedAudio, `${Date.now()}.ogg`)
-        axios.post(
-            PROCESS_AUDIO_URL, data,
-            {
-                signal: axiosController.signal
-            }
-        )
-            .then((response) => {
-                if (response.status !== 200) throw new Error();
-                setAudioProcessedResult(response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-            .finally(() => {
-                setProcessingAudio(false);
-                setRecordedAudio(null);
-            })
+  function formatTime(seconds: number) {
+    var minutes = Math.floor(seconds / 60);
+    var seconds = seconds % 60;
+    return (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  }
 
-    }
 
-    const discardAudio = () => {
-        setRecordedAudio(null);
+  const startProcessingAudio = () => {
+    if (!recordedAudio || recordedAudio === null) return;
+    setProcessingAudio(true);
+    setAudioProcessedResult(null);
+    const data = new FormData();
+    data.append("file", recordedAudio, `${Date.now()}.ogg`)
+    axios.post(
+      PROCESS_AUDIO_URL, data,
+      {
+        signal: axiosController.signal
+      }
+    )
+      .then((response) => {
+        if (response.status !== 200) throw new Error();
+        setAudioProcessedResult(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
         setProcessingAudio(false);
-    }
+        setRecordedAudio(null);
+      })
+
+  }
+
+  const discardAudio = () => {
+    setRecordedAudio(null);
+    setProcessingAudio(false);
+  }
 
 
 
-    return (
-        <main>
-            <div className="transition-all flex flex-col justify-center items-center lg:items-end duration-500 border-0 border-gray-200 z-[3]">
+  return (
+    <main>
+      <div>
+        <div>
+          <div className="transition-all flex flex-col justify-center items-center lg:items-end duration-500 border-0 border-gray-200 z-[3]">
             {
               !processingAudio ?
                 <>
@@ -76,7 +78,7 @@ function Mice() {
                         <button type="button" onClick={toggleRecording} className="btn-mic absolute inset-auto">
                           <i className={"bi bi-mic text-3xl"}></i>
                         </button>
-                        <div className={"ripple w-96 max-w-[380px] -z-[1] " + (isRecording ? "h-96" : "!max-h-0 opacity-0")}>
+                        <div className={"ripple w-96 max-w-[380px]  -z-[1] " + (isRecording ? "h-96" : "!max-h-0 opacity-0")}>
                           <div className="circle"></div>
                           <div className="circle"></div>
                           <div className="circle"></div>
@@ -96,7 +98,7 @@ function Mice() {
                           </button>
                           <button type="button" onClick={startProcessingAudio}
                             className="bg-primary hover:bg-primary/80 text-white px-5 py-2 rounded-full transition-all">
-                            { "Process your audio with Mirroor AI"}
+                            {"Process your audio with Mirroor AI"}
                           </button>
                         </div>
                       </div>
@@ -134,18 +136,18 @@ function Mice() {
                   {
                     isRecording ?
                       <span>
-                        { "Recording started."}
+                        {"Recording started."}
                         <br />
-                        { "Listening..."}
+                        {"Listening..."}
                         <br /> <br />
                         <span>
                           {
-                             
-                              <>
-                                Tap on the mic
-                                <i className="bi bi-mic px-2 text-primary"></i>
-                                again to stop recording.
-                              </>
+
+                            <>
+                              Tap on the mic
+                              <i className="bi bi-mic px-2 text-primary"></i>
+                              again to stop recording.
+                            </>
                           }
                         </span>
                       </span>
@@ -182,10 +184,12 @@ function Mice() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-           
-        </main>
-    )
+
+    </main>
+  )
 }
 
 export default Mice

@@ -9,7 +9,7 @@ export default function HomePage() {
 
 
     return (
-        <div>
+        <>
             {/* section 1 */}
             <div className="bg-secondary pb-10">
                 <div className="mx-5 max-w-screen-xl xl:mx-auto">
@@ -44,7 +44,7 @@ export default function HomePage() {
                                     </h1>
                                 </div>
                             </div>
-          
+
                         </div>
                         {/* music string */}
                         <div className="flex text-center justify-center items-center">
@@ -188,8 +188,7 @@ export default function HomePage() {
                 </div>
 
             </div>
-        </div>
-
+        </>
     )
 }
 
