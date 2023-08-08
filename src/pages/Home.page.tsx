@@ -22,74 +22,76 @@ export default function HomePage() {
                     {/* section 1 Mice  */}
                     <div className="lg:w-[30%] border px-2 pb-20 relative">
                         {/* mice component */}
-                        <div className="flex flex-col gap-5 pt-10">
+                        <div className="flex flex-col gap-3 ">
                             <div className="flex flex-col gap-4 justify-between  lg:flex-row ">
-                                <div className="flex flex-col items-center justify-center gap-10">
-                                    <div>
-                                        <img src="/images/screen.JPG" className="w-20 h-auto object-center object-contain" alt="" />
+                                <div className="flex flex-col items-center gap-10  h-auto">
+                                    <div className="">
+                                        <img src="/images/screen.jpg" className="w-30 h-auto object-center object-contain bg-primary min-h-[30px]" alt="" />
                                     </div>
                                     <div className="flex items-center justify-center">
-                                        <h1 className="text-xl text-white/80 font-extrabold flex text-center justify-center items-center lg:w-[150px]">
+                                        <h1 className="text-lg text-white/80 font-extrabold flex text-center justify-center items-center  xl:w-[90%]">
                                             Hi Stefeano! How do you feel physically
                                         </h1>
                                     </div>
                                 </div>
-                                <div className="flex flex-col items-center justify-center gap-10">
-                                    <div>
-                                        <img src="/images/screen.JPG" className="w-20 h-auto object-center object-contain" alt="" />
+                                <div className="flex flex-col items-center gap-12 h-auto ">
+                                    <div className="">
+                                        <img src="/images/screen.jpg" className="w-30 h-auto object-center object-contain bg-primary min-h-[30px]" alt="" />
                                     </div>
-                                    <div className="flex items-center justify-center ">
-                                        <h1 className="text-xl text-white/80 font-extrabold flex text-center justify-center items-center lg:w-[150px]">
-                                            Hi Stefeano! How do you feel physically
+                                    <div className="flex items-center justify-center">
+                                        <h1 className="text-lg text-white/80 font-extrabold flex text-center justify-center items-center">
+                                            And! How do you feel mentally?
                                         </h1>
                                     </div>
                                 </div>
-
-
-                                {/* music string */}
                             </div>
+                            {/* music string */}
                             <div className="flex text-center justify-center items-center">
                                 <img src="/images/music-string.png" alt="" className="w-1/2 h-auto object-contain object-center" />
                             </div>
                             <div className="flex items-center justify-center">
                                 <img src="/images/manlogo.png" alt="" className="w-auto h-24 aspect-square object-contain object-center" />
                             </div>
-                            <div className="text-2xl text-white/80 font-extrabold  text-center pb-2">
-                                I'm super fine thank you...
+                            <div className="text-2xl text-white/80 font-extrabold  justify-center pb-2 flex ">
+                                <p className="">
+                                    I'm super fine<br />
+                                    <span className="ps-4"> thank you...</span>
+                                </p>
                             </div>
-
                         </div>
                         <div className=" border flex items-center justify-center w-full bg-white absolute bottom-0 right-0">
                             <p className="text-xl font-bold text-red-700 py-2">
-                                Questions
+                                2  Questions
                             </p>
                         </div>
                     </div>
                     {/* section 2 Results and data */}
                     <div className="lg:w-[30%] border px-3 relative pb-20">
                         <div className="pt-10 ">
-                            <div className="flex  gap-7 flex-col lg:flex-col md:flex-row">
-                                <div className="flex lg:flex-row flex-col items-center justify-center gap-3">
+                            <div className="flex  gap-14 flex-col lg:flex-col md:flex-row">
+                                <div className="flex lg:flex-row flex-col  justify-center gap-3">
                                     <div className="flex flex-wrap items-center justify-center text-center gap-8 border lg:w-1/2 py-4">
-                                        <h1 className="text-2xl text-white/80 font-extrabold">
+                                        <h1 className="text-2xl text-white/60 font-extrabold underline">
                                             Mental Keywords
                                         </h1>
                                         <h3 className="text-xl text-white font-bold max-w-[150px]">
                                             Super fine Relaxed Concentrated
                                         </h3>
                                     </div>
-                                    <div className="flex flex-wrap items-center justify-center text-center gap-8 border lg:w-1/2 py-4">
-                                        <h1 className="text-2xl text-white/80 font-extrabold">
+                                    <div className="flex flex-wrap  justify-center text-center gap-8 border lg:w-1/2 py-4  overflow-auto">
+                                        <h1 className="text-2xl text-white/60 font-extrabold underline">
                                             Physical Keywords
                                         </h1>
                                         <h3 className="text-xl text-white font-bold max-w-[150px]">
-                                            Super fine Relaxed Concentrated
+                                            Hadache <br />
+                                            Tired <br />
+                                            Stressed
                                         </h3>
                                     </div>
                                 </div>
 
 
-                                <div className="flex justify-between gap-3 w-full flex-col xl:flex-row pb-1">
+                                <div className="flex justify-between gap-1 w-full flex-col xl:flex-row pb-1">
                                     <div className="flex flex-col items-center text-center justify-center xl:w-1/2">
                                         <h1 className="text-2xl text-white/70 font-extrabold flex text-center">
                                             Your mental State
@@ -102,7 +104,7 @@ export default function HomePage() {
                                                     strokeDashoffset={circumference - ((0) / 100 * circumference)}
                                                     className="text-blue-900 " />
                                             </svg>
-                                            <span className="absolute text-4xl left-1/2 -translate-x-1/2 ml-2 text-white"> 30%</span>
+                                            <span className="absolute text-3xl left-1/2 -translate-x-1/2 ml-2 text-white mt-2"> 100%</span>
                                         </div>
                                     </div>
                                     <div className="flex flex-col items-center justify-center xl:w-1/2">
@@ -117,7 +119,7 @@ export default function HomePage() {
                                                     strokeDashoffset={circumference - ((0) / 100 * circumference)}
                                                     className="text-blue-900 " />
                                             </svg>
-                                            <span className="absolute text-4xl left-1/2 -translate-x-1/2 ml-2 text-white"> 30%</span>
+                                            <span className="absolute text-3xl left-1/2 -translate-x-1/2 ml-2 text-white mt-2"> 100%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -133,11 +135,11 @@ export default function HomePage() {
                     </div>
                     {/* 3rd */}
                     <div className="lg:w-[30%] border px-4 relative">
-                        <div className="pt-10 pb-20">
+                        <div className="pt-24 pb-20">
                             <div className="flex flex-col gap-5 md:gap-10">
                                 <div className="flex items-center justify-center">
                                     <h1 className="text-2xl text-white/80 font-extrabold text-center">
-                                        These tracks can help you feeling better
+                                        These tracks can help you feeling better!
                                     </h1>
                                 </div>
                                 <div className="flex text-center justify-center items-center rounded-full">
@@ -145,6 +147,7 @@ export default function HomePage() {
                                 </div>
                                 {/* mp3 shape */}
                                 <div className="flex flex-col  gap-1 items-center justify-center md:flex-wrap">
+                                    <div>
                                     <div className="flex justify-between items-center relative w-full bg-slate-400 max-w-4xl">
                                         <div className="flex gap-5">
                                             <div>
@@ -181,6 +184,8 @@ export default function HomePage() {
                                             <i className="fa-solid fa-circle-play text-white text-3xl absolute bottom-2  md:right-3 right-1"></i>
                                         </div>
                                     </div>
+                                    </div>
+                                    
                                 </div>
 
                             </div>
