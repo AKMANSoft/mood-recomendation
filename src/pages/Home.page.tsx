@@ -148,7 +148,7 @@ export default function HomePage() {
                                 {/* mp3 shape */}
                                 <div className="flex flex-col  gap-1 items-center justify-center md:flex-wrap">
                                     <div>
-                                    <div className="flex justify-between items-center relative w-full bg-slate-400 max-w-4xl">
+                                    <div className="flex justify-between items-center relative w-full bg-slate-400 max-w-6xl">
                                         <div className="flex gap-5">
                                             <div>
                                                 <img src="/images/mp3.jpeg" alt="" className="w-24 h-auto aspect-square object-cover" />

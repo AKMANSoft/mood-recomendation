@@ -17,7 +17,7 @@ export default function LoginPage() {
     })
     const handleFormSubmit = async (data: LoginFormSchema) => {
         console.log(data)
-     }
+    }
 
 
     return (
@@ -83,8 +83,11 @@ export default function LoginPage() {
                                             <div className="flex justify-between py-2 items-center text-xs md:text-sm">
                                                 {/* check box properties need to set */}
                                                 <div className="flex gap-1">
-                                                    <Checkbox>
-                                                    </Checkbox>
+                                                    <div className="pt-[1px]">
+                                                        <Checkbox>
+                                                        </Checkbox>
+                                                    </div>
+
                                                     <p className=" text-primary-dark font-semibold font-inter">
                                                         <span>Remember me</span>
                                                     </p>
