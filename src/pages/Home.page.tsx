@@ -12,7 +12,7 @@ export default function HomePage() {
             <HeaderComponent />
             <div className="mx-5 max-w-screen-xl xl:mx-auto">
                 {/* title */}
-                <div className="pt-5 md:pt-10">
+                <div className="pt-5 md:pt-10 text-center flex">
                     <h1 className="text-2xl font-extrabold text-white md:text-5xl">
                         Mirror webapp reccomandation music
                     </h1>

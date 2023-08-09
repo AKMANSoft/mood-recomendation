@@ -1,1 +1,0 @@
-import{j as e}from"./index-e7381bb3.js";function s(){return e.jsx("header",{children:e.jsx("div",{className:"flex  justify-end  pt-5 pr-20 bg-primary",children:e.jsx("a",{href:"#",children:e.jsx("img",{src:"/images/logo.png",className:"object-contain object-center h-7 md:h-12 w-auto",alt:""})})})})}export{s as H};
